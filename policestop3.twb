@@ -1,0 +1,1428 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20203.20.1018.2303                               -->
+<workbook original-version='18.1' source-build='2020.3.2 (20203.20.1018.2303)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <_.fcp.MarkAnimation.true...MarkAnimation />
+    <_.fcp.ObjectModelEncapsulateLegacy.true...ObjectModelEncapsulateLegacy />
+    <_.fcp.ObjectModelTableType.true...ObjectModelTableType />
+    <_.fcp.SchemaViewerObjectModel.true...SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='RI_cleaned+' inline='true' name='federated.1b62qaa1t6rx7o17fwq7z13e0aa0' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='RI_cleaned' name='textscan.0pdg85a0o65s9x1d2z9rq0brel6i'>
+            <connection class='textscan' directory='C:/Users/mkdty/clarusway/datascience/Tableau/project' filename='RI_cleaned.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <_.fcp.ObjectModelEncapsulateLegacy.false...relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[RI_cleaned.csv].[stop_date]' />
+              <expression op='[weather.csv].[DATE]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.0pdg85a0o65s9x1d2z9rq0brel6i' name='RI_cleaned.csv' table='[RI_cleaned#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='id' ordinal='0' />
+              <column datatype='string' name='state' ordinal='1' />
+              <column datatype='date' name='stop_date' ordinal='2' />
+              <column datatype='datetime' name='stop_time' ordinal='3' />
+              <column datatype='string' name='location_raw' ordinal='4' />
+              <column datatype='string' name='county_name' ordinal='5' />
+              <column datatype='string' name='county_fips' ordinal='6' />
+              <column datatype='string' name='fine_grained_location' ordinal='7' />
+              <column datatype='integer' name='police_department' ordinal='8' />
+              <column datatype='string' name='driver_gender' ordinal='9' />
+              <column datatype='real' name='driver_age_raw' ordinal='10' />
+              <column datatype='real' name='driver_age' ordinal='11' />
+              <column datatype='string' name='driver_race_raw' ordinal='12' />
+              <column datatype='string' name='driver_race' ordinal='13' />
+              <column datatype='string' name='violation_raw' ordinal='14' />
+              <column datatype='string' name='violation' ordinal='15' />
+              <column datatype='boolean' name='search_conducted' ordinal='16' />
+              <column datatype='string' name='search_type_raw' ordinal='17' />
+              <column datatype='string' name='search_type' ordinal='18' />
+              <column datatype='boolean' name='contraband_found' ordinal='19' />
+              <column datatype='string' name='stop_outcome' ordinal='20' />
+              <column datatype='boolean' name='is_arrested' ordinal='21' />
+              <column datatype='string' name='stop_duration' ordinal='22' />
+              <column datatype='boolean' name='out_of_state' ordinal='23' />
+              <column datatype='boolean' name='drugs_related_stop' ordinal='24' />
+              <column datatype='string' name='district' ordinal='25' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pdg85a0o65s9x1d2z9rq0brel6i' name='weather.csv' table='[weather#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='STATION' ordinal='0' />
+              <column datatype='date' name='DATE' ordinal='1' />
+              <column datatype='string' name='AWND' ordinal='2' />
+              <column datatype='string' name='TAVG' ordinal='3' />
+              <column datatype='integer' name='TMAX' ordinal='4' />
+              <column datatype='integer' name='TMIN' ordinal='5' />
+              <column datatype='integer' name='WT01' ordinal='6' />
+              <column datatype='integer' name='WT02' ordinal='7' />
+              <column datatype='integer' name='WT03' ordinal='8' />
+              <column datatype='integer' name='WT04' ordinal='9' />
+              <column datatype='integer' name='WT05' ordinal='10' />
+              <column datatype='integer' name='WT06' ordinal='11' />
+              <column datatype='integer' name='WT07' ordinal='12' />
+              <column datatype='integer' name='WT08' ordinal='13' />
+              <column datatype='integer' name='WT09' ordinal='14' />
+              <column datatype='integer' name='WT10' ordinal='15' />
+              <column datatype='integer' name='WT11' ordinal='16' />
+              <column datatype='integer' name='WT13' ordinal='17' />
+              <column datatype='integer' name='WT14' ordinal='18' />
+              <column datatype='integer' name='WT15' ordinal='19' />
+              <column datatype='integer' name='WT16' ordinal='20' />
+              <column datatype='integer' name='WT17' ordinal='21' />
+              <column datatype='integer' name='WT18' ordinal='22' />
+              <column datatype='integer' name='WT19' ordinal='23' />
+              <column datatype='integer' name='WT21' ordinal='24' />
+              <column datatype='integer' name='WT22' ordinal='25' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.false...relation>
+        <_.fcp.ObjectModelEncapsulateLegacy.true...relation join='left' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[RI_cleaned.csv].[stop_date]' />
+              <expression op='[weather.csv].[DATE]' />
+            </expression>
+          </clause>
+          <relation connection='textscan.0pdg85a0o65s9x1d2z9rq0brel6i' name='RI_cleaned.csv' table='[RI_cleaned#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='id' ordinal='0' />
+              <column datatype='string' name='state' ordinal='1' />
+              <column datatype='date' name='stop_date' ordinal='2' />
+              <column datatype='datetime' name='stop_time' ordinal='3' />
+              <column datatype='string' name='location_raw' ordinal='4' />
+              <column datatype='string' name='county_name' ordinal='5' />
+              <column datatype='string' name='county_fips' ordinal='6' />
+              <column datatype='string' name='fine_grained_location' ordinal='7' />
+              <column datatype='integer' name='police_department' ordinal='8' />
+              <column datatype='string' name='driver_gender' ordinal='9' />
+              <column datatype='real' name='driver_age_raw' ordinal='10' />
+              <column datatype='real' name='driver_age' ordinal='11' />
+              <column datatype='string' name='driver_race_raw' ordinal='12' />
+              <column datatype='string' name='driver_race' ordinal='13' />
+              <column datatype='string' name='violation_raw' ordinal='14' />
+              <column datatype='string' name='violation' ordinal='15' />
+              <column datatype='boolean' name='search_conducted' ordinal='16' />
+              <column datatype='string' name='search_type_raw' ordinal='17' />
+              <column datatype='string' name='search_type' ordinal='18' />
+              <column datatype='boolean' name='contraband_found' ordinal='19' />
+              <column datatype='string' name='stop_outcome' ordinal='20' />
+              <column datatype='boolean' name='is_arrested' ordinal='21' />
+              <column datatype='string' name='stop_duration' ordinal='22' />
+              <column datatype='boolean' name='out_of_state' ordinal='23' />
+              <column datatype='boolean' name='drugs_related_stop' ordinal='24' />
+              <column datatype='string' name='district' ordinal='25' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0pdg85a0o65s9x1d2z9rq0brel6i' name='weather.csv' table='[weather#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+              <column datatype='string' name='STATION' ordinal='0' />
+              <column datatype='date' name='DATE' ordinal='1' />
+              <column datatype='string' name='AWND' ordinal='2' />
+              <column datatype='string' name='TAVG' ordinal='3' />
+              <column datatype='integer' name='TMAX' ordinal='4' />
+              <column datatype='integer' name='TMIN' ordinal='5' />
+              <column datatype='integer' name='WT01' ordinal='6' />
+              <column datatype='integer' name='WT02' ordinal='7' />
+              <column datatype='integer' name='WT03' ordinal='8' />
+              <column datatype='integer' name='WT04' ordinal='9' />
+              <column datatype='integer' name='WT05' ordinal='10' />
+              <column datatype='integer' name='WT06' ordinal='11' />
+              <column datatype='integer' name='WT07' ordinal='12' />
+              <column datatype='integer' name='WT08' ordinal='13' />
+              <column datatype='integer' name='WT09' ordinal='14' />
+              <column datatype='integer' name='WT10' ordinal='15' />
+              <column datatype='integer' name='WT11' ordinal='16' />
+              <column datatype='integer' name='WT13' ordinal='17' />
+              <column datatype='integer' name='WT14' ordinal='18' />
+              <column datatype='integer' name='WT15' ordinal='19' />
+              <column datatype='integer' name='WT16' ordinal='20' />
+              <column datatype='integer' name='WT17' ordinal='21' />
+              <column datatype='integer' name='WT18' ordinal='22' />
+              <column datatype='integer' name='WT19' ordinal='23' />
+              <column datatype='integer' name='WT21' ordinal='24' />
+              <column datatype='integer' name='WT22' ordinal='25' />
+            </columns>
+          </relation>
+        </_.fcp.ObjectModelEncapsulateLegacy.true...relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>state</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[state]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>state</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stop_date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[stop_date]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>stop_date</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stop_time</remote-name>
+            <remote-type>134</remote-type>
+            <local-name>[stop_time]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>stop_time</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Hour</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>location_raw</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[location_raw]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>location_raw</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>county_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[county_name]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>county_name</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>county_fips</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[county_fips]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>county_fips</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>fine_grained_location</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[fine_grained_location]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>fine_grained_location</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>police_department</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[police_department]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>police_department</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>driver_gender</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[driver_gender]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>driver_gender</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>driver_age_raw</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[driver_age_raw]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>driver_age_raw</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>driver_age</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[driver_age]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>driver_age</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>driver_race_raw</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[driver_race_raw]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>driver_race_raw</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>driver_race</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[driver_race]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>driver_race</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>violation_raw</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[violation_raw]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>violation_raw</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>violation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[violation]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>violation</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>search_conducted</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[search_conducted]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>search_conducted</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>search_type_raw</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[search_type_raw]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>search_type_raw</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>search_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[search_type]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>search_type</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contraband_found</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[contraband_found]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>contraband_found</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stop_outcome</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[stop_outcome]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>stop_outcome</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_arrested</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[is_arrested]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>is_arrested</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>stop_duration</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[stop_duration]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>stop_duration</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>out_of_state</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[out_of_state]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>out_of_state</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>drugs_related_stop</remote-name>
+            <remote-type>11</remote-type>
+            <local-name>[drugs_related_stop]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>drugs_related_stop</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>boolean</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>district</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[district]</local-name>
+            <parent-name>[RI_cleaned.csv]</parent-name>
+            <remote-alias>district</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>STATION</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[STATION]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>STATION</remote-alias>
+            <ordinal>26</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>DATE</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[DATE]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>DATE</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>AWND</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[AWND]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>AWND</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TAVG</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[TAVG]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>TAVG</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TMAX</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TMAX]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>TMAX</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>TMIN</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[TMIN]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>TMIN</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT01</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT01]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT01</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT02</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT02]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT02</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT03</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT03]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT03</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT04</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT04]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT04</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT05</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT05]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT05</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT06</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT06]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT06</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT07</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT07]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT07</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT08</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT08]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT08</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT09</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT09]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT09</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT10</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT10]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT10</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT11</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT11]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT11</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT13</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT13]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT13</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT14</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT14]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT14</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT15</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT15]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT15</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT16</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT16]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT16</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT17</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT17]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT17</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT18</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT18]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT18</remote-alias>
+            <ordinal>48</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT19</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT19]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT19</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT21</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT21]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT21</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>WT22</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[WT22]</local-name>
+            <parent-name>[weather.csv]</parent-name>
+            <remote-alias>WT22</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <approx-count>1</approx-count>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Awnd' datatype='string' name='[AWND]' role='dimension' type='nominal' />
+      <column caption='Rating' datatype='integer' name='[Calculation_236157551786491905]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='ZN([WT01])+ZN([WT02])+ZN([WT03])+ZN([WT04])+ZN([WT05])+ZN([WT06])+ZN([WT07])+ZN([WT08])+ZN([WT09])+ZN([WT10])+ZN([WT11])+ZN([WT13])+ZN([WT14])+ZN([WT15])+ZN([WT16])+ZN([WT17])+ZN([WT18])+ZN([WT19])+ZN([WT21])+ZN([WT22])' />
+      </column>
+      <column caption='Bad Conditions' datatype='string' name='[Calculation_236157551788163074]' role='dimension' type='nominal'>
+        <calculation class='tableau' formula='IF  [Calculation_236157551786491905] = 0  THEN  &quot;good&quot;&#13;&#10;ELSEIF 4&gt;= [Calculation_236157551786491905] AND  [Calculation_236157551786491905] &gt;0  THEN&quot;bad&quot;&#13;&#10;ELSEIF   [Calculation_236157551786491905] &gt;4   THEN   &quot;worse&quot;&#13;&#10;END' />
+      </column>
+      <column caption='arrest rate' datatype='real' name='[Calculation_236157551789711363]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM(IF [is_arrested] = TRUE THEN 1 ELSE 0 END)/COUNT([is_arrested] )' />
+      </column>
+      <column caption='Date' datatype='date' name='[DATE]' role='dimension' type='ordinal' />
+      <column caption='Station' datatype='string' name='[STATION]' role='dimension' type='nominal' />
+      <column caption='Tavg' datatype='string' name='[TAVG]' role='dimension' type='nominal' />
+      <column caption='Tmax' datatype='integer' name='[TMAX]' role='measure' type='quantitative' />
+      <column caption='Tmin' datatype='integer' name='[TMIN]' role='measure' type='quantitative' />
+      <column caption='Wt01' datatype='integer' name='[WT01]' role='dimension' type='ordinal' />
+      <column caption='Wt02' datatype='integer' name='[WT02]' role='dimension' type='ordinal' />
+      <column caption='Wt03' datatype='integer' name='[WT03]' role='dimension' type='ordinal' />
+      <column caption='Wt04' datatype='integer' name='[WT04]' role='dimension' type='ordinal' />
+      <column caption='Wt05' datatype='integer' name='[WT05]' role='dimension' type='ordinal' />
+      <column caption='Wt06' datatype='integer' name='[WT06]' role='dimension' type='ordinal' />
+      <column caption='Wt07' datatype='integer' name='[WT07]' role='dimension' type='ordinal' />
+      <column caption='Wt08' datatype='integer' name='[WT08]' role='dimension' type='ordinal' />
+      <column caption='Wt09' datatype='integer' name='[WT09]' role='dimension' type='ordinal' />
+      <column caption='Wt10' datatype='integer' name='[WT10]' role='dimension' type='ordinal' />
+      <column caption='Wt11' datatype='integer' name='[WT11]' role='dimension' type='ordinal' />
+      <column caption='Wt13' datatype='integer' name='[WT13]' role='dimension' type='ordinal' />
+      <column caption='Wt14' datatype='integer' name='[WT14]' role='dimension' type='ordinal' />
+      <column caption='Wt15' datatype='integer' name='[WT15]' role='dimension' type='ordinal' />
+      <column caption='Wt16' datatype='integer' name='[WT16]' role='dimension' type='ordinal' />
+      <column caption='Wt17' datatype='integer' name='[WT17]' role='dimension' type='ordinal' />
+      <column caption='Wt18' datatype='integer' name='[WT18]' role='dimension' type='ordinal' />
+      <column caption='Wt19' datatype='integer' name='[WT19]' role='dimension' type='ordinal' />
+      <column caption='Wt21' datatype='integer' name='[WT21]' role='dimension' type='ordinal' />
+      <column caption='Wt22' datatype='integer' name='[WT22]' role='dimension' type='ordinal' />
+      <_.fcp.ObjectModelTableType.true...column caption='RI_cleaned.csv' datatype='table' name='[__tableau_internal_object_id__].[RI_cleaned.csv_64CA05A426354B0597F01AB9089E880F]' role='measure' type='quantitative' />
+      <column caption='Contraband Found' datatype='boolean' name='[contraband_found]' role='dimension' type='nominal' />
+      <column caption='County Fips' datatype='string' name='[county_fips]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='County Name' datatype='string' name='[county_name]' role='dimension' semantic-role='[County].[Name]' type='nominal' />
+      <column caption='District' datatype='string' name='[district]' role='dimension' type='nominal' />
+      <column caption='Driver Age' datatype='real' name='[driver_age]' role='measure' type='quantitative' />
+      <column caption='Driver Age Raw' datatype='real' name='[driver_age_raw]' role='measure' type='quantitative' />
+      <column caption='Driver Gender' datatype='string' name='[driver_gender]' role='dimension' type='nominal' />
+      <column caption='Driver Race' datatype='string' name='[driver_race]' role='dimension' type='nominal' />
+      <column caption='Driver Race Raw' datatype='string' name='[driver_race_raw]' role='dimension' type='nominal' />
+      <column caption='Drugs Related Stop' datatype='boolean' name='[drugs_related_stop]' role='dimension' type='nominal' />
+      <column caption='Fine Grained Location' datatype='string' name='[fine_grained_location]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
+      <column caption='Is Arrested' datatype='boolean' name='[is_arrested]' role='dimension' type='nominal' />
+      <column caption='Location Raw' datatype='string' name='[location_raw]' role='dimension' type='nominal' />
+      <column caption='Out Of State' datatype='boolean' name='[out_of_state]' role='dimension' type='nominal' />
+      <column caption='Police Department' datatype='integer' name='[police_department]' role='measure' type='quantitative' />
+      <column caption='Search Conducted' datatype='boolean' name='[search_conducted]' role='dimension' type='nominal' />
+      <column caption='Search Type' datatype='string' name='[search_type]' role='dimension' type='nominal' />
+      <column caption='Search Type Raw' datatype='string' name='[search_type_raw]' role='dimension' type='nominal' />
+      <column caption='State' datatype='string' name='[state]' role='dimension' semantic-role='[State].[Name]' type='nominal' />
+      <column caption='Stop Date' datatype='date' name='[stop_date]' role='dimension' type='ordinal' />
+      <column caption='Stop Duration' datatype='string' name='[stop_duration]' role='dimension' type='nominal' />
+      <column caption='Stop Outcome' datatype='string' name='[stop_outcome]' role='dimension' type='nominal' />
+      <column aggregation='Hour' caption='Stop Time' datatype='datetime' name='[stop_time]' role='dimension' type='ordinal' />
+      <column caption='Violation' datatype='string' name='[violation]' role='dimension' type='nominal' />
+      <column caption='Violation Raw' datatype='string' name='[violation_raw]' role='dimension' type='nominal' />
+      <layout _.fcp.SchemaViewerObjectModel.false...dim-percentage='0.5' _.fcp.SchemaViewerObjectModel.false...measure-percentage='0.4' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Turkey&quot;' />
+      </semantic-values>
+      <field-sort-info field-sort-order-type='custom-order'>
+        <field-sort-custom-order field='id' />
+        <field-sort-custom-order field='state' />
+        <field-sort-custom-order field='stop_date' />
+        <field-sort-custom-order field='stop_time' />
+        <field-sort-custom-order field='location_raw' />
+        <field-sort-custom-order field='county_name' />
+        <field-sort-custom-order field='county_fips' />
+        <field-sort-custom-order field='fine_grained_location' />
+        <field-sort-custom-order field='police_department' />
+        <field-sort-custom-order field='driver_gender' />
+        <field-sort-custom-order field='driver_age_raw' />
+        <field-sort-custom-order field='driver_age' />
+        <field-sort-custom-order field='driver_race_raw' />
+        <field-sort-custom-order field='driver_race' />
+        <field-sort-custom-order field='violation_raw' />
+        <field-sort-custom-order field='violation' />
+        <field-sort-custom-order field='search_conducted' />
+        <field-sort-custom-order field='search_type_raw' />
+        <field-sort-custom-order field='search_type' />
+        <field-sort-custom-order field='contraband_found' />
+        <field-sort-custom-order field='stop_outcome' />
+        <field-sort-custom-order field='is_arrested' />
+        <field-sort-custom-order field='Calculation_236157551789711363' />
+        <field-sort-custom-order field='stop_duration' />
+        <field-sort-custom-order field='out_of_state' />
+        <field-sort-custom-order field='drugs_related_stop' />
+        <field-sort-custom-order field='district' />
+        <field-sort-custom-order field='STATION' />
+        <field-sort-custom-order field='DATE' />
+        <field-sort-custom-order field='AWND' />
+        <field-sort-custom-order field='TAVG' />
+        <field-sort-custom-order field='TMAX' />
+        <field-sort-custom-order field='TMIN' />
+        <field-sort-custom-order field='WT01' />
+        <field-sort-custom-order field='Calculation_236157551786491905' />
+        <field-sort-custom-order field='WT02' />
+        <field-sort-custom-order field='WT03' />
+        <field-sort-custom-order field='WT04' />
+        <field-sort-custom-order field='WT05' />
+        <field-sort-custom-order field='WT06' />
+        <field-sort-custom-order field='WT07' />
+        <field-sort-custom-order field='WT08' />
+        <field-sort-custom-order field='WT09' />
+        <field-sort-custom-order field='WT10' />
+        <field-sort-custom-order field='WT11' />
+        <field-sort-custom-order field='WT13' />
+        <field-sort-custom-order field='WT14' />
+        <field-sort-custom-order field='WT15' />
+        <field-sort-custom-order field='WT16' />
+        <field-sort-custom-order field='WT17' />
+        <field-sort-custom-order field='WT18' />
+        <field-sort-custom-order field='WT19' />
+        <field-sort-custom-order field='WT21' />
+        <field-sort-custom-order field='WT22' />
+      </field-sort-info>
+      <_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+        <objects>
+          <object caption='RI_cleaned.csv' id='RI_cleaned.csv_64CA05A426354B0597F01AB9089E880F'>
+            <properties context=''>
+              <relation join='left' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[RI_cleaned.csv].[stop_date]' />
+                    <expression op='[weather.csv].[DATE]' />
+                  </expression>
+                </clause>
+                <relation connection='textscan.0pdg85a0o65s9x1d2z9rq0brel6i' name='RI_cleaned.csv' table='[RI_cleaned#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='string' name='id' ordinal='0' />
+                    <column datatype='string' name='state' ordinal='1' />
+                    <column datatype='date' name='stop_date' ordinal='2' />
+                    <column datatype='datetime' name='stop_time' ordinal='3' />
+                    <column datatype='string' name='location_raw' ordinal='4' />
+                    <column datatype='string' name='county_name' ordinal='5' />
+                    <column datatype='string' name='county_fips' ordinal='6' />
+                    <column datatype='string' name='fine_grained_location' ordinal='7' />
+                    <column datatype='integer' name='police_department' ordinal='8' />
+                    <column datatype='string' name='driver_gender' ordinal='9' />
+                    <column datatype='real' name='driver_age_raw' ordinal='10' />
+                    <column datatype='real' name='driver_age' ordinal='11' />
+                    <column datatype='string' name='driver_race_raw' ordinal='12' />
+                    <column datatype='string' name='driver_race' ordinal='13' />
+                    <column datatype='string' name='violation_raw' ordinal='14' />
+                    <column datatype='string' name='violation' ordinal='15' />
+                    <column datatype='boolean' name='search_conducted' ordinal='16' />
+                    <column datatype='string' name='search_type_raw' ordinal='17' />
+                    <column datatype='string' name='search_type' ordinal='18' />
+                    <column datatype='boolean' name='contraband_found' ordinal='19' />
+                    <column datatype='string' name='stop_outcome' ordinal='20' />
+                    <column datatype='boolean' name='is_arrested' ordinal='21' />
+                    <column datatype='string' name='stop_duration' ordinal='22' />
+                    <column datatype='boolean' name='out_of_state' ordinal='23' />
+                    <column datatype='boolean' name='drugs_related_stop' ordinal='24' />
+                    <column datatype='string' name='district' ordinal='25' />
+                  </columns>
+                </relation>
+                <relation connection='textscan.0pdg85a0o65s9x1d2z9rq0brel6i' name='weather.csv' table='[weather#csv]' type='table'>
+                  <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                    <column datatype='string' name='STATION' ordinal='0' />
+                    <column datatype='date' name='DATE' ordinal='1' />
+                    <column datatype='string' name='AWND' ordinal='2' />
+                    <column datatype='string' name='TAVG' ordinal='3' />
+                    <column datatype='integer' name='TMAX' ordinal='4' />
+                    <column datatype='integer' name='TMIN' ordinal='5' />
+                    <column datatype='integer' name='WT01' ordinal='6' />
+                    <column datatype='integer' name='WT02' ordinal='7' />
+                    <column datatype='integer' name='WT03' ordinal='8' />
+                    <column datatype='integer' name='WT04' ordinal='9' />
+                    <column datatype='integer' name='WT05' ordinal='10' />
+                    <column datatype='integer' name='WT06' ordinal='11' />
+                    <column datatype='integer' name='WT07' ordinal='12' />
+                    <column datatype='integer' name='WT08' ordinal='13' />
+                    <column datatype='integer' name='WT09' ordinal='14' />
+                    <column datatype='integer' name='WT10' ordinal='15' />
+                    <column datatype='integer' name='WT11' ordinal='16' />
+                    <column datatype='integer' name='WT13' ordinal='17' />
+                    <column datatype='integer' name='WT14' ordinal='18' />
+                    <column datatype='integer' name='WT15' ordinal='19' />
+                    <column datatype='integer' name='WT16' ordinal='20' />
+                    <column datatype='integer' name='WT17' ordinal='21' />
+                    <column datatype='integer' name='WT18' ordinal='22' />
+                    <column datatype='integer' name='WT19' ordinal='23' />
+                    <column datatype='integer' name='WT21' ordinal='24' />
+                    <column datatype='integer' name='WT22' ordinal='25' />
+                  </columns>
+                </relation>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+      </_.fcp.ObjectModelEncapsulateLegacy.true...object-graph>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='text table that displays arrest rate per search for each weather rating.'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='RI_cleaned+' name='federated.1b62qaa1t6rx7o17fwq7z13e0aa0' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1b62qaa1t6rx7o17fwq7z13e0aa0'>
+            <column caption='Rating' datatype='integer' name='[Calculation_236157551786491905]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='ZN([WT01])+ZN([WT02])+ZN([WT03])+ZN([WT04])+ZN([WT05])+ZN([WT06])+ZN([WT07])+ZN([WT08])+ZN([WT09])+ZN([WT10])+ZN([WT11])+ZN([WT13])+ZN([WT14])+ZN([WT15])+ZN([WT16])+ZN([WT17])+ZN([WT18])+ZN([WT19])+ZN([WT21])+ZN([WT22])' />
+            </column>
+            <column caption='Bad Conditions' datatype='string' name='[Calculation_236157551788163074]' role='dimension' type='nominal'>
+              <calculation class='tableau' formula='IF  [Calculation_236157551786491905] = 0  THEN  &quot;good&quot;&#13;&#10;ELSEIF 4&gt;= [Calculation_236157551786491905] AND  [Calculation_236157551786491905] &gt;0  THEN&quot;bad&quot;&#13;&#10;ELSEIF   [Calculation_236157551786491905] &gt;4   THEN   &quot;worse&quot;&#13;&#10;END' />
+            </column>
+            <column caption='arrest rate' datatype='real' name='[Calculation_236157551789711363]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='SUM(IF [is_arrested] = TRUE THEN 1 ELSE 0 END)/COUNT([is_arrested] )' />
+            </column>
+            <column caption='Wt01' datatype='integer' name='[WT01]' role='dimension' type='ordinal' />
+            <column caption='Wt02' datatype='integer' name='[WT02]' role='dimension' type='ordinal' />
+            <column caption='Wt03' datatype='integer' name='[WT03]' role='dimension' type='ordinal' />
+            <column caption='Wt04' datatype='integer' name='[WT04]' role='dimension' type='ordinal' />
+            <column caption='Wt05' datatype='integer' name='[WT05]' role='dimension' type='ordinal' />
+            <column caption='Wt06' datatype='integer' name='[WT06]' role='dimension' type='ordinal' />
+            <column caption='Wt07' datatype='integer' name='[WT07]' role='dimension' type='ordinal' />
+            <column caption='Wt08' datatype='integer' name='[WT08]' role='dimension' type='ordinal' />
+            <column caption='Wt09' datatype='integer' name='[WT09]' role='dimension' type='ordinal' />
+            <column caption='Wt10' datatype='integer' name='[WT10]' role='dimension' type='ordinal' />
+            <column caption='Wt11' datatype='integer' name='[WT11]' role='dimension' type='ordinal' />
+            <column caption='Wt13' datatype='integer' name='[WT13]' role='dimension' type='ordinal' />
+            <column caption='Wt14' datatype='integer' name='[WT14]' role='dimension' type='ordinal' />
+            <column caption='Wt15' datatype='integer' name='[WT15]' role='dimension' type='ordinal' />
+            <column caption='Wt16' datatype='integer' name='[WT16]' role='dimension' type='ordinal' />
+            <column caption='Wt17' datatype='integer' name='[WT17]' role='dimension' type='ordinal' />
+            <column caption='Wt18' datatype='integer' name='[WT18]' role='dimension' type='ordinal' />
+            <column caption='Wt19' datatype='integer' name='[WT19]' role='dimension' type='ordinal' />
+            <column caption='Wt21' datatype='integer' name='[WT21]' role='dimension' type='ordinal' />
+            <column caption='Wt22' datatype='integer' name='[WT22]' role='dimension' type='ordinal' />
+            <column caption='Driver Gender' datatype='string' name='[driver_gender]' role='dimension' type='nominal' />
+            <column caption='Is Arrested' datatype='boolean' name='[is_arrested]' role='dimension' type='nominal' />
+            <column-instance column='[Calculation_236157551788163074]' derivation='None' name='[none:Calculation_236157551788163074:nk]' pivot='key' type='nominal' />
+            <column-instance column='[driver_gender]' derivation='None' name='[none:driver_gender:nk]' pivot='key' type='nominal' />
+            <column-instance column='[violation]' derivation='None' name='[none:violation:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_236157551789711363]' derivation='User' name='[usr:Calculation_236157551789711363:qk]' pivot='key' type='quantitative' />
+            <column caption='Violation' datatype='string' name='[violation]' role='dimension' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:driver_gender:nk]'>
+            <groupfilter function='union' user:ui-domain='relevant' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:driver_gender:nk]' member='&quot;F&quot;' />
+              <groupfilter function='member' level='[none:driver_gender:nk]' member='&quot;M&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:driver_gender:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:Calculation_236157551788163074:nk]' value='80' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <text column='[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[usr:Calculation_236157551789711363:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:violation:nk] / [federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:driver_gender:nk])</rows>
+        <cols>[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:Calculation_236157551788163074:nk]</cols>
+      </table>
+      <simple-id uuid='{0D753B5F-2AC2-4B10-B952-CEA11F8DBD9A}' />
+    </worksheet>
+  </worksheets>
+  <windows saved-dpi-scale-factor='1.25' source-height='30'>
+    <window class='worksheet' maximized='true' name='text table that displays arrest rate per search for each weather rating.'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:Calculation_236157551788163074:nk]</field>
+            <field>[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:driver_gender:nk]</field>
+            <field>[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:violation:nk]</field>
+            <field>[federated.1b62qaa1t6rx7o17fwq7z13e0aa0].[none:violation_raw:nk]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{5A4CD86A-A832-46DA-87E5-DB6F87D41A6E}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='text table that displays arrest rate per search for each weather rating.' width='192'>
+      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
+      mc2ALgOzEkjMIEcwTXf1Pne0Wi1Llixh27ZtlJWVoVKpuOeeexBFkePHj5OcnExaWhp5eXm8
+      /vrrKBQKEhISyMvLk5PhZhrhlgpxpawRJUnC5XLh8/kwGo0YjWOp4W63G41Gg06nQxAERkdH
+      EQQBi8Uy1nJciS8hIzPdKBQKLBYLFsvk5bZm84c7natUKmJjYyf9/5ICcDqdYWW/F06IohhW
+      tpWhUAiXy3VtOcMJgiAL4BpmfLgvHFAoFKjV6mtLADExkTGDKDP9jI6OYrVar3VrRAlRCOLz
+      B5FQoNZo0WpUV1S1kiQR9PtRaLRoFCJefxCNzoBaHqj9RMRQEH/ww0Q4tVaHRiVfuKkwJQH4
+      HJ3seO0VTg5K6NQKdPF5PHzv7aTEXrmdR0S/iz/96DESvv4491ka+d5Tr/ONJ/7A8tQrdoqw
+      pbtqC6+U20m1jvni5K64i+uyoqa5VlcXQRA4efIk7e3tFBQUkJube1Gr4na7qaiowOl0Ulpa
+      SlJS0tQE0F13gHcbo/jlf34XkzJI/8AwUUYVfvcoXkEBIT9BSYUlKgqdRgViCKfdji8koTNZ
+      sBh1KJHwukZxeQOotAYsUWY0SgViyI/dPkrA58YX+mBENn4u3/nG18m0QijgwekV0SlDuL0B
+      tKboD44n4HU5cXoDqDU61FotZqMBZYRsDTqJCPcFEkWRiooKTp06xfz589mzZw+iKFJQUDAR
+      pQSDQd55552JbVTfeOMNHnnkkakJQKPRE7TX0NzroCg1hqSkJMDHwb/+FxsbE1mRq6a+sQlr
+      yX189wsL6anYxvN7GrEYVTj9Rr7wtUfICDTw0mt78On0+Ec9FN36CHeUxHJ864u8Ve0k2Wam
+      sd9HOkCgmy0vvMT6x0tJ6nmTnz5Tz/135dPafJYWTy7/8r8eQdtbzl9eeRfREodBtNOrL+Dx
+      b30Rs/bzu9Ay1yY+n4+zZ89y9913k5SUhNls5vTp0xQUFEyUcTgcOBwOHn74YUwmE6FQiNra
+      2qkJIHnuWr53v5vXfvVzTInZrNuwgYWZY01sdPo87v/ySuwNh/iPZ3bQc4OVv712jLmPfo2S
+      KDjyxp84VNFIT9c7eFKWc8/ybLpOvsP2smMsi0nj9X29fO/nT5Cl8fGH1rpLnl9riWfFrV/k
+      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
+      bDb+f5OmHR4gmnuHAAAAAElFTkSuQmCC
+    </thumbnail>
+  </thumbnails>
+</workbook>
